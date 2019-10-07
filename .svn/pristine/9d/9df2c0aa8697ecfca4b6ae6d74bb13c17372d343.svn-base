@@ -1,0 +1,34 @@
+const assert = require('assert');
+const feathers = require('@feathersjs/feathers');
+const updateStatusTask = require('../../src/hooks/updatestatus-task');
+
+describe('\'UpdatetaskStatus\' hook', () => {
+  let app;
+
+  beforeEach(() => {
+    app = feathers();
+
+    app.use('/dummy', {
+      async create(data) {
+        return data;
+      }
+    });
+
+    app.service('dummy').hooks({
+      before: updateStatusTask({name: 'taskLog', action: 'Denied'}),
+    });
+    
+    assert.ok(app.service('dummy'));
+  });
+
+  it('runs the hook', async () => {
+    let mockContextData = {
+      log: [],
+    };
+    const result = await app.service('dummy').create(mockContextData);
+    
+    assert.deepEqual(result, { 'log': ['Status: Denied']
+
+    });
+  });
+});

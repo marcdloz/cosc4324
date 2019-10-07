@@ -1,0 +1,79 @@
+﻿Project Scope
+* Our project will need to have the ability to schedule testing, monitor running tests in real time, and generate reports for auditing.
+* It should be accessible easily on a desktop browser and be mobile friendly.
+* There will be multiple roles accessing this application, so role based access controls will be necessary.
+* Application will need to have the ability to export and import test data.
+* A calendar should be a feature that allows users to view scheduled tests.
+* Test Information will include a description, contact information, links, files, and a test log
+* Testing information will all be held within a database.
+
+
+Backlog
+Features that are left to do.
+* Setup Continuous Integration
+* Setup Unit Testing
+* Setup Dockerfiles
+* Authentication Flow
+* Dashboard/Homepage with Overview
+* Setup Unit Tests
+* Work Requests:
+   * Contain one or more tasks and have the following information.
+   * Requestor, charge code, description, tool being created
+* Tasks:
+   * Test Resource: Pressure Vessel, Vibe Table, Test Beam, etc.
+   * Test Duration and Schedule. Start Time and End Time.
+   * Test Data
+   * Testing log, links, files (from presentation we know that these are pictures but do not know the format as of now)
+   * Test Contacts
+* Calendar:
+   * Will show scheduled tests.
+   * Will be color coded:
+      * Blue - Requested
+      * Orange - Tentative
+      * Black - Completed
+      * Gray - Canceled
+      * Red - Facility Shutdown
+* Work Request Search:
+   * Must support keywords, work request number, or task number
+   * An advanced search - currently awaiting information regarding this feature.
+* Viewing and Exporting Data:
+   * Multiple channels should be able to be selected.
+      * From powerpoint we were able to view Dyno RPM, Large Brake Torque (ft-lb). We will follow up with the sponsor to obtain a list.
+   * Ability to edit y-axis and x-axis visibility
+   * Optional: Ability to adjust date range
+   * Optional: Update a live test
+   * Optional: Export to file. (Format? Will ask for clarification during use cases.)
+   * Optional: Zooming using natural gestures such as double clicking
+   * Optional: Ability to drag Legends
+1st Iteration Backlog
+* Authentication Flow
+* Dashboard with an overview.
+* Setup Continuous Integration
+* Setup Dockerfiles
+* Setup Unit Testing
+
+
+Testing and Quality Assurance
+* Unit testing for the front end as well as the back end.
+* Test Accounts to assess the quality of the product to be released.
+* Feedback from demonstrations.
+
+
+General Questions
+
+
+* Where will this be hosted? A cloud provider such as AWS, Azure, Oracle, etc.
+   * How many users will be accessing it?
+   * What locations will these users be accessing it from?
+   * Is latency a big concern?
+* Is the central test database already set up and running? If so, how will we get access to it? If the database is not set up yet, will we have to set up all of it’s configurations? These may include security, redundancy, automatic failover, and sharding to name a few.
+* Are the notifications strictly set to appear within the web application or are they also expected to be delivered through email for example?
+* Is the application that’s displayed within the presentation a previously released application? (We can use this to see if there were shortcomings in it that we could improve on)
+* This ties in somewhat to how this will be hosted. Seeing that Docker is included within the list of technologies, will we have to worry about container orchestration at all? If so what technology will be used?
+* How will authentication be enabled? Will we have to have our own authentication flow or will we be supplied with one like an internal single sign on?
+* How does an example of the database data look like? This will help take edge cases into consideration.
+* What browsers require support?
+* Will a mobile friendly application be enough or is a native app required?
+* How will demos work?
+* Where should we host our repository?
+* What are the minimum code coverage requirements?

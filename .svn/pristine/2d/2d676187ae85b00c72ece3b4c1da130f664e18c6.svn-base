@@ -1,0 +1,15 @@
+.mat-card{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+}
+
+.app-calendar {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.closebuttoncontainer{
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: right;
+}
+

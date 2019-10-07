@@ -1,0 +1,13 @@
+// eslint-disable-next-line no-unused-vars
+module.exports = ({ name, action }) => {
+  return async context => {
+
+    let log = context.data.log;
+    
+    const status = 'Status: ' + action;
+    log.push(status);
+    context.data.log = log;
+    return context;
+  };
+};
+  
